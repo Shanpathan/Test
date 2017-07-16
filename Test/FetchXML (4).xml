@@ -1,0 +1,17 @@
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+  <entity name="salesorderdetail">
+    <attribute name="productid" />
+    <attribute name="productdescription" />
+    <attribute name="priceperunit" />
+    <attribute name="quantity" />
+    <attribute name="extendedamount" />
+    <attribute name="salesorderdetailid" />
+    <order attribute="productid" descending="false" />
+    <filter type="and">
+      <condition attribute="salesorderid" operator="eq" uiname="STC" uitype="salesorder" value="{888AC51C-C245-E711-80D8-00259087B097}" />
+    </filter>
+    <link-entity name="product" from="productid" to="productid" alias="ad">
+      <attribute name="name" />
+    </link-entity>
+  </entity>
+</fetch>
